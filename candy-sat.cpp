@@ -29,7 +29,7 @@ void search_figure(Board B){
     int flag=1;
     int i, j, l=0;
     
-    while(flag || l<B.size){
+    while(flag && l<B.size){
     
         i=l%B.w;
         j=l/B.h;
