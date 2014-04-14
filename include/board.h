@@ -7,11 +7,10 @@
 using namespace std;
 
 #include "candy.h"
-// prova modifica
 
 /**********************
-La classe che rappresenta un quadro di gioco
-**********+++++++++++*/
+ La classe che rappresenta un quadro di gioco
+**********************/
 
 class Board{
 public:
@@ -32,7 +31,8 @@ public:
             row.resize(w);
         }
     }
-
+    
+    
     virtual ~Board() {}
 
 };
@@ -53,7 +53,7 @@ public:
 
 /**********************
  La classe che rappresenta una tripletta
- *********************/
+*********************/
 
 class Triplet : public Figure {
     vector<Candy> t;
@@ -67,6 +67,23 @@ public:
     int definition(int x, int y);
 };
 
+/*********************
+ La classe che rappresenta il giocatore
+*********************/
+
+class Game{
+    Board B_app;
+    
+    Game(Board B): B_app(B){}
+    
+public:
+    int swap(int x, int y, int dir);
+    int check(int x, int y, int dir);
+    int trisat(Candy c1, Candy c2, Candy c3);
+    void search_figures();
+    void game_flow();
+    
+};
 
     
 #endif // BOARD_H
